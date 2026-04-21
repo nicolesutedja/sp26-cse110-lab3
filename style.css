@@ -1,39 +1,84 @@
+/* Color palette and variables */
 :root {
     --main-bg-color: white;
     --accent-color: rgb(128, 0, 87);
     --text-color: hsl(310, 63%, 25%);
-    --header-bg: color-mix(in srgb, var(--main-bg-color) 90%, var(--accent-color) 10%);
+    --header-bg: color-mix(in srgb, var(--main-bg-color) 90%, var(--accent-color) 10%); 
     --box-shadow-color: rgba(171, 0, 117, 0.5);
+    --highlight-bg: color(display-p3 0.95 0.9 0.95); 
 }
 
-/*TODO: check with requirements step 2 box part*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 140px; 
+    scroll-behavior: smooth; 
+}
+
+/* Core document styling */
 body {
     background-color: var(--header-bg, white); 
     color: var(--text-color, black);
-    font-family: sans-serif;
-    padding: 2rem;
-    width: 90%;
+    font-family: 'Saira', sans-serif;
     min-height: 100vh;
 }
 
 .meeting-container {
-    margin: 20px auto 20px auto; 
-    padding: 1.5em;
+    position: relative; 
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    padding: 1.5em; 
     border: 2px solid var(--accent-color);
-    border-width: 2px;
     max-width: 15cm;
+    min-width: 300px; 
     font-size: 12pt;
-    box-shadow: 4px 6px 15px var(--box-shadow-color)
+    box-shadow: 4px 6px 15px var(--box-shadow-color);
 }
 
-.meeting-header {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    border-bottom-style: dashed;
-    border-bottom-color: #ccc;
-    border-bottom-width: 1px;
+header.meeting-header {
+    position: sticky; 
+    top: 0;
+    background-color: var(--text-color); 
+    color: var(--header-bg); 
+    margin: 10px 0;
+    padding: 10px 20px 20px 20px;
+    border-bottom: 3px solid var(--accent-color);
     border-radius: 8px;
+    z-index: 100;
+
+    & h1 {
+        color: var(--header-bg); 
+        font-family: 'Mogra', sans-serif;
+    }
+
+    & nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px; 
+    }
+
+    & nav a {
+        display: inline-block; 
+        text-decoration: none;
+        color: var(--header-bg); 
+        font-weight: 600;
+    }
+
+    & nav a:hover {
+        text-decoration: underline;
+        color: white; 
+    }
+
+    & nav a:active {
+        color: rgb(227, 169, 193);
+    }
 }
 
 h1 {
@@ -45,7 +90,86 @@ h1 {
 img, video {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto; /* Centers the media */
-    border-radius: 8px; /* Optional: gives them nice rounded corners */
+    display: block; 
+    margin: auto; 
+    border-radius: 8px; 
+}
+
+#meeting-intro {
+    background-color: var(--highlight-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: var(--accent-color);
+}
+
+.meeting-container h2 {
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--box-shadow-color);
+    padding-bottom: 5px;
+}
+
+fieldset > legend {
+    font-weight: 600;
+    color: var(--accent-color);
+    padding: 0 5px;
+}
+
+h2 + p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+h3 ~ p {
+    margin-left: 10px; 
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    align-items: start;
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%;
+    height: 35px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+section:has(form) {
+    background-color: rgba(128, 0, 87, 0.03);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--box-shadow-color);
+}
+
+
+/* Media query for tablet and desktop */
+@media (min-width: 768px) {
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    fieldset:last-of-type {
+        grid-column: span 2;
+    }
+    
+    button {
+        grid-column: span 2;
+        padding: 10px;
+        cursor: pointer;
+        background-color: var(--accent-color);
+        color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        background-color: var(--text-color);
+    }
 }

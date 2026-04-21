@@ -7,7 +7,20 @@
     <meta name="author" content="Nicole Sutedja" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="lab2-favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    
+    <style>
+      .status-pending {
+        background-color: rgb(255, 245, 189);
+        color: rgb(100, 18, 82);
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+    </style>
   </head>
 
   <body>
@@ -15,13 +28,13 @@
     <header class="meeting-header">
       <h1>Pomodoro Timer First Brainstorm</h1>
       <nav>
-        <a href="#meeting-info">Meeting Info</a> |
-        <a href="#attendance">Attendance</a> |
-        <a href="#agenda">Agenda</a> |
-        <a href="#old-business">Old Business</a> |
-        <a href="#new-business">New Business</a> |
-        <a href="#misc">Misc / Q&amp;A</a> |
-        <a href="#media">Media</a> |
+        <a href="#meeting-info">Meeting Info</a>
+        <a href="#attendance">Attendance</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#old-business">Old Business</a>
+        <a href="#new-business">New Business</a>
+        <a href="#misc">Misc / Q&amp;A</a>
+        <a href="#media">Media</a>
         <a href="#feedback">Feedback Form</a>
       </nav>
     </header>
@@ -31,7 +44,7 @@
     <main class="meeting-container">
 
       <section id="meeting-info">
-        <h2>Meeting Information</h2>
+        <h2 class="mogra-regular">Meeting Information</h2>
 
         <h3>Topic: Initial Brainstorm &amp; Feature Planning</h3>
         <h3>Date: April 8, 2026</h3>
@@ -181,8 +194,7 @@
 
         <p>
           All concerns have been logged in the team's shared GitHub Meeting notes.
-          Current status: <span><i>pending review by team leads</i></span>.
-        </p>
+          Current status: <span class="status-pending"><i style="font-style: normal; font-weight: bold;">pending review by team leads</i></span>. </p>
       </section>
 
       <hr />
@@ -304,9 +316,6 @@
             CSE 110 Spring 2026 &mdash;
             Minutes recorded by <strong>Nicole Sutedja</strong> <br>Any issues? Email Nicole Sutedja at <a href="mailto:nsutedja@ucsd.edu">nsutedja@ucsd.edu</a>
         </small>
-      </p>
-      <p>
-        <a href="#top">Back to top</a>
       </p>
     </footer>
 

@@ -1,0 +1,51 @@
+:root {
+    --main-bg-color: white;
+    --accent-color: rgb(128, 0, 87);
+    --text-color: hsl(310, 63%, 25%);
+    --header-bg: color-mix(in srgb, var(--main-bg-color) 90%, var(--accent-color) 10%);
+    --box-shadow-color: rgba(171, 0, 117, 0.5);
+}
+
+/*TODO: check with requirements step 2 box part*/
+body {
+    background-color: var(--header-bg, white); 
+    color: var(--text-color, black);
+    font-family: sans-serif;
+    padding: 2rem;
+    width: 90%;
+    min-height: 100vh;
+}
+
+.meeting-container {
+    margin: 20px auto 20px auto; 
+    padding: 1.5em;
+    border: 2px solid var(--accent-color);
+    border-width: 2px;
+    max-width: 15cm;
+    font-size: 12pt;
+    box-shadow: 4px 6px 15px var(--box-shadow-color)
+}
+
+.meeting-header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    border-bottom-style: dashed;
+    border-bottom-color: #ccc;
+    border-bottom-width: 1px;
+    border-radius: 8px;
+}
+
+h1 {
+    color: var(--accent-color);
+    text-align: center;
+    text-decoration: underline;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the media */
+    border-radius: 8px; /* Optional: gives them nice rounded corners */
+}
